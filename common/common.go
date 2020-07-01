@@ -24,7 +24,23 @@ type Distance struct {
 	Feet   int `json:"feet"`
 }
 
+//Thrust .
 type Thrust struct {
 	KN  float32 `json:"kN"`
 	LBF float32 `json:"lbf"`
+}
+
+//Address .
+type Address struct {
+	CompanyAddress string `json:"address"`
+	City           string `json:"city"`
+	State          string `json:"state"`
+}
+
+//Location .
+type Location struct {
+	Name      string  `json:"name"`
+	Region    string  `json:"region"`
+	Latitude  float32 `json:"latitude"`
+	Longitude float32 `json:"longitude"`
 }
