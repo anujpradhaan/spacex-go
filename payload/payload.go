@@ -2,17 +2,17 @@ package payload
 
 //PayLoad .
 type PayLoad struct {
-	ID              string
-	NoradId         []string
-	IsResued        bool
-	CustomerNames   []string
-	Nationality     string
-	Manufacturer    string
-	PayloadType     string
-	PayloadMassInKd float32
-	PaylodMassInLBS float32
-	Orbit           string
-	OrbitParams     OrbitDetails
+	PayLoadID       string       `json:"payload_id"`
+	NoradID         []string     `json:"norad_id"`
+	IsResued        bool         `json:"reused"`
+	CustomerNames   []string     `json:"customers"`
+	Nationality     string       `json:"nationality"`
+	Manufacturer    string       `json:"manufacturer"`
+	PayloadType     string       `json:"payload_type"`
+	PayloadMassInKd float32      `json:"payload_mass_kg"`
+	PaylodMassInLBS float32      `json:"payload_mass_lbs"`
+	Orbit           string       `json:"orbit"`
+	OrbitParams     OrbitDetails `json:"orbit_params"`
 }
 
 //OrbitDetails .
@@ -30,4 +30,6 @@ type OrbitDetails struct {
 	Epoch             string  `json:"epoch"`
 	MeanMotion        float32 `json:"mean_motion"`
 	Raan              float32 `json:"raan"`
+	ArgOfPericenter   float32 `json:"arg_of_pericenter"`
+	MeanAnomaly       float32 `json:"mean_anomaly"`
 }
