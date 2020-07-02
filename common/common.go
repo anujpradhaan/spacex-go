@@ -12,6 +12,14 @@ type Mass struct {
 	LB float32 `json:"lb"`
 }
 
+//MassWithDetails .
+type MassWithDetails struct {
+	ID   string  `json:"id"`
+	Name string  `json:"name"`
+	Kg   float32 `json:"kg"`
+	LB   float32 `json:"lb"`
+}
+
 //Volume .
 type Volume struct {
 	CubicMeter int `json:"cubic_meters"`
@@ -20,7 +28,7 @@ type Volume struct {
 
 //Distance .
 type Distance struct {
-	Meters int `json:"meterts"`
+	Meters int `json:"meters"`
 	Feet   int `json:"feet"`
 }
 
