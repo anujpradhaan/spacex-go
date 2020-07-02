@@ -1,55 +1,38 @@
 package ship
 
-/*
-{
-  "ship_id": "MRSTEVEN",
-  "ship_name": "MR STEVEN",
-  "ship_model": null,
-  "ship_type": "High Speed Craft",
-  "roles": [
-    "Fairing Recovery"
-  ],
-  "active": true,
-  "imo": 9744465,
-  "mmsi": 338358000,
-  "abs": 1249191,
-  "class": 15252765,
-  "weight_lbs": 992000,
-  "weight_kg": 449964,
-  "year_built": 2015,
-  "home_port": "Port of Los Angeles",
-  "status": "Stopped",
-  "speed_kn": 0,
-  "course_deg": null,
-  "position": {
-    "latitude": 33.73136,
-    "longitude": -118.2712
-  },
-  "successful_landings": null,
-  "attempted_landings": null,
-  "missions": [
-    {
-      "name": "KoreaSat 5A",
-      "flight": 50
-    },
-    {
-      "name": "Paz / Starlink Demo",
-      "flight": 56
-    },
-    {
-      "name": "Iridium NEXT Mission 4",
-      "flight": 52
-    },
-    {
-      "name": "Iridium NEXT Mission 6",
-      "flight": 62
-    },
-    {
-      "name": "Iridium Next Mission 7",
-      "flight": 66
-    }
-  ],
-  "url": "https://www.marinetraffic.com/en/ais/details/ships/shipid:3439091/vessel:MR%20STEVEN",
-  "image": "https://i.imgur.com/MtEgYbY.jpg"
+import (
+	"spacex-go/common"
+)
+
+//Ship .
+type Ship struct {
+	ShipID             string          `json:"ship_id"`
+	ShipName           string          `json:"ship_name"`
+	ShipModel          string          `json:"ship_model"`
+	ShipType           string          `json:"ship_type"`
+	Roles              []string        `json:"roles"`
+	Active             bool            `json:"active"`
+	IMO                int             `json:"imo"`
+	MMSI               int             `json:"mmsi"`
+	ABS                int             `json:"abs"`
+	Class              int             `json:"class"`
+	WeightInLbs        float32         `json:"weight_lbs"`
+	WeightInKg         float32         `json:"weight_kg"`
+	YearBuilt          int             `json:"year_built"`
+	HomePort           string          `json:"home_port"`
+	Status             string          `json:"status"`
+	SpeedKN            int             `json:"speed_kn"`
+	CourseDeg          string          `json:"course_deg"`
+	Position           common.Location `json:"position"`
+	SuccessfulLandings int             `json:"successful_landings"`
+	AttemptedLandings  int             `json:"attempted_landings"`
+	Missions           []ShipMission   `json:"missions"`
+	URL                string          `json:"url"`
+	ImageURL           string          `json:"image"`
 }
-*/
+
+//ShipMission .
+type ShipMission struct {
+	Name   string `json:"name"`
+	Flight int    `json:"flight"`
+}
